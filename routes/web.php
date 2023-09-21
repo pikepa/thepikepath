@@ -1,22 +1,17 @@
 <?php
 
-use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\TagShowController;
+use App\Http\Controllers\PostShowController;
+use App\Http\Controllers\PostIndexController;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider and all of them will
-| be assigned to the "web" middleware group. Make something great!
-|
-*/
+Route::get('/', PostIndexController::class)->name('posts.index');
+Route::get('/{post:slug}', PostShowController::class)->name('posts.show');
+Route::get('/tags/{tag}', TagShowController::class)->name('tags.show');
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
+
 
 Route::get('/dashboard', function () {
     return view('dashboard');
