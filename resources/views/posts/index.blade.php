@@ -6,6 +6,8 @@
         @foreach($posts as $post)
             <x-post-list-item :post="$post" />
         @endforeach
+
+        {{ $posts->links() }}
     @else
     <p>Nothing Here Yet!</p>
     @endif

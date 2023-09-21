@@ -17,11 +17,15 @@
 </head>
 
 <body class="font-sans text-gray-900 bg-green-300 antialiased">
-    <div class="max-w-2xl mx-auto py-16">
+    <div class="max-w-3xl mx-auto pt-16">
 
-        <a href="{{ route('posts.index') }}" class="inline-block text-4xl font-extrabold hover:text-blue-500 transition-colours duration-100">{{ config('app.name') }}</a>
+        <div class="pb-4 border-b-2 border-green-800">
+            <a href="{{ route('posts.index') }}" 
+            class=" inline-block text-4xl font-extrabold 
+            hover:text-blue-500 transition-colours duration-100">{{ config('app.name') }}</a>
+        </div>
 
-        <main class="mt-16">
+        <main class="mt-8">
             {{ $slot }}
 
         </main>
