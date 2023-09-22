@@ -12,7 +12,9 @@ class PostIndexController extends Controller
     public function __invoke()
     {
         return view('posts.index',[ 
-            'posts' => Sheets::collection('posts')->all()->sortByDesc('date')->paginate(1)
+            'posts' => Sheets::collection('posts')->all()
+            ->sortByDesc('date')
+            ->paginate(5)
         ]);
     }
 }

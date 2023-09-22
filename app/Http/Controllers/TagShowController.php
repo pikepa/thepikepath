@@ -16,8 +16,9 @@ class TagShowController extends Controller
         $posts = Sheets::collection('posts')
         ->all()
         ->filter(function(Post $post)use($tag) {
-            return in_array($tag,$post->tags);
-        })->paginate(1); 
+            return in_array($tag,$post->tags);})
+        ->sortByDesc('date')
+        ->paginate(5); 
 
         abort_if($posts->isEmpty(), 404);
         
