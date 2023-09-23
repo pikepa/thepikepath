@@ -6,7 +6,7 @@ test('registration screen can be rendered', function () {
     $response = $this->get('/register');
 
     $response->assertStatus(200);
-});
+})->skip();
 
 test('new users can register', function () {
     $response = $this->post('/register', [

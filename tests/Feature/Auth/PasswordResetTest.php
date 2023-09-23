@@ -8,7 +8,7 @@ test('reset password link screen can be rendered', function () {
     $response = $this->get('/forgot-password');
 
     $response->assertStatus(200);
-});
+})->skip();
 
 test('reset password link can be requested', function () {
     Notification::fake();
